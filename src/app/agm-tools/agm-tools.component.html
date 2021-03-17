@@ -1,0 +1,145 @@
+<div class="tm-container-fluid">
+
+
+    <section class="tm-site-header tm-flex-center tm-mb-50 tm-bgcolor-1 tm-border-rounded">
+        <i class="fas fa-3x fa-map-marker-alt"></i>
+        <h1>Angular Google Maps (AGM) marker options</h1>
+        <div>
+            <button type="button" (click)="this.viewType = 'terrain'" class="btn btn-outline-primary mx-1">
+        Terrain
+      </button>
+            <button type="button" (click)="this.viewType = 'satellite'" class="btn btn-outline-secondary mx-1">
+        Satellite
+      </button>
+            <button type="button" (click)="this.viewType = 'roadmap'" class="btn btn-outline-success mx-1">
+        Radmap
+      </button>
+            <button type="button" (click)="this.viewType = 'hybrid'" class="btn btn-outline-danger mx-1">
+        hybrid
+      </button>
+        </div>
+    </section>
+
+    <section class="tm-about tm-mb-80 tm-p-50 tm-bgcolor-2 tm-border-rounded">
+        <div class="tm-about-header tm-flex-center">
+            <i class="fas fa-users fa-2x"></i>
+            <h2>Agm marker options</h2>
+            <p class="tm-mb-40">
+                AgmMarker rend un marqueur de carte dans un AgmMap .
+            </p>
+            <p class="tm-mb-0">
+                Contributions
+                <a rel="nofollow" href="https://angular-maps.com/api-docs/agm-core/directives/agmmarker#animation" target="_blank">
+                    <b></b>animation Cela peut être "BOUNCE" ou "DROP", iconUrl, latitude,, longitude, label, marqueurCliquable, markerDraggable, mapTypeId Cela peut être (Terrain ,Satellite ,Radmap,Hybrid), minZoom, maxZoom
+                </a>
+                click sur les buttons ci dessus pour changer mapTypeId
+            </p>
+        </div>
+        <div class="tm-about-text">
+            <agm-map [usePanning]="true" [mapTypeId]="this.viewType" [minZoom]="1" [maxZoom]="9" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                <agm-marker [iconUrl]="m.urlIcon" [animation]="'BOUNCE'" *ngFor="let m of markers; let i = index" [label]="m.label" [latitude]="m.lat" [longitude]="m.lng" [markerDraggable]="m.draggable">
+                    <agm-info-window [isOpen]="m.draggable">
+                        <strong>Contenu du info-window</strong>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">label</th>
+                                    <th scope="col">lat</th>
+                                    <th scope="col">lng</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">{{ m.label }}</th>
+                                    <td>{{ m.lat }}</td>
+                                    <td>{{ m.lng }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </agm-info-window>
+                </agm-marker>
+            </agm-map>
+        </div>
+    </section>
+
+    <div class="tm-gallery-section tm-mb-80">
+        <ul class="filters-button-group tm-mb-40">
+            <li><a href="#" data-filter=".AgmMarker">AgmMarker</a></li>
+            <li><a href="#" data-filter=".AgmTravel">AgmTravel live tracking</a></li>
+            <li><a href="#" data-filter=".AgmPlot">AgmPlot</a></li>
+            <li><a href="#" data-filter=".AgmCluster">AgmCluster</a></li>
+        </ul>
+        <div class="tm-gallery">
+            <div class="tm-gallery-item AgmMarker AgmCluster AgmPlot AgmTravel">
+                <a href="../../assets/img/img-01.png">
+                    <img src="../../assets/img/img-01.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmMarker AgmCluster AgmPlot AgmTravel">
+                <a href="../../assets/img/img-02.png">
+                    <img src="../../assets/img/img-02.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmMarker AgmPlot">
+                <a href="../../assets/img/img-03.png">
+                    <img src="../../assets/img/img-03.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmMarker AgmCluster AgmPlot AgmTravel">
+                <a href="../../assets/img/img-04.png">
+                    <img src="../../assets/img/img-04.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmMarker AgmCluster AgmPlot AgmTravel">
+                <a title="Style map" data-placement="top" href="../../assets/img/img-05.jpg">
+                    <img src="../../assets/img/img-05.jpg" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmTravel">
+                <a href="../../assets/img/img-06.png">
+                    <img src="../../assets/img/img-06.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmTravel">
+                <a href="../../assets/img/img-07.png">
+                    <img src="../../assets/img/img-07.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmPlot">
+                <a href="../../assets/img/img-08.png">
+                    <img src="../../assets/img/img-08.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmPlot">
+                <a href="../../assets/img/img-09.png">
+                    <img src="../../assets/img/img-09.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmMarker AgmTravel c">
+                <a href="../../assets/img/img-10.png">
+                    <img src="../../assets/img/img-10.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmCluster">
+                <a href="../../assets/img/img-11.png">
+                    <img src="../../assets/img/img-11.png" class="img-fluid" />
+                </a>
+            </div>
+            <div class="tm-gallery-item AgmPlot">
+                <a href="../../assets/img/img-12.jpg">
+                    <img src="../../assets/img/img-12.jpg" class="img-fluid" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="tm-footer">Copyright 2021 Issam BK- Design</footer>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12 col-lg-9 col-xl-9 col-md-9 px-0">
+            <div class="p-5"></div>
+        </div>
+    </div>
+</div>

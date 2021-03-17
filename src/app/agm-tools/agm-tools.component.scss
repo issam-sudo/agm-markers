@@ -1,0 +1,14 @@
+agm-map {
+    height: 30rem;
+    width: 100%;
+}
+
+.sideBar {
+    border-radius: 9px !important;
+    box-shadow: 7px 8px 5px #80808057;
+}
+
+::ng-deep .agm-map-container-inner {
+    border-radius: 9px !important;
+    box-shadow: 7px 8px 5px #80808057;
+}
