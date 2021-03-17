@@ -7,9 +7,8 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e",
-        "predeploy": "ng build --prod --base-href=/agmMarker/",
-        "deploy": "npx gh-pages -d dist/agmMarker"
+        "e2e": "ng e2e"
+
     },
     "private": true,
     "dependencies": {
